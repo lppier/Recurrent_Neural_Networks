@@ -67,6 +67,7 @@ n_outputs = 1
 X = tf.placeholder(tf.float32, [None, n_steps, n_inputs])
 y = tf.placeholder(tf.float32, [None, n_steps, n_outputs])
 
+# Output projection wrapper places a fully connected layer node on every rnn cell
 cell = tf.contrib.rnn.OutputProjectionWrapper(
     tf.contrib.rnn.BasicRNNCell(num_units=n_neurons, activation=tf.nn.relu),
     output_size=n_outputs)
@@ -113,6 +114,7 @@ plt.show()
 
 print(y_pred)
 
+
 # ----- Without using output wrapper (Basically just stack and use one fully connected layer ----- #
 
 reset_graph()
@@ -136,3 +138,50 @@ stacked_rnn_outputs = tf.reshape(rnn_outputs, [-1, n_neurons])
 stacked_outputs = tf.layers.dense(stacked_rnn_outputs, n_outputs)
 # reshape it back to [batch_size, n_steps, n_outputs (1)]
 outputs = tf.reshape(stacked_outputs, [-1, n_steps, n_outputs])
+
+loss = tf.reduce_mean(tf.square(outputs - y))
+optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate)
+training_op = optimizer.minimize(loss)
+
+init = tf.global_variables_initializer()
+saver = tf.train.Saver()
+
+n_iterations = 10000
+batch_size = 50
+
+with tf.Session() as sess:
+    init.run()
+    for iteration in range(n_iterations):
+        X_batch, y_batch = next_batch(batch_size, n_steps)
+        sess.run(training_op, feed_dict={X: X_batch, y: y_batch})
+        if iteration % 100 == 0:
+            mse = loss.eval(feed_dict={X: X_batch, y: y_batch})
+            print(iteration, "\tMSE:", mse)
+
+    X_new = time_series(np.array(t_instance[:-1].reshape(-1, n_steps, n_inputs)))
+    y_pred = sess.run(outputs, feed_dict={X: X_new})
+
+    saver.save(sess, "./my_time_series_model")
+
+
+
+
+
+
+# ----- Using what the model has learnt, generate a output using predictions ----- #
+
+with tf.Session() as sess:
+    saver.restore(sess, "./my_time_series_model")
+
+    sequence = [0.] * n_steps
+    for iteration in range(300):
+        X_batch = np.array(sequence[-n_steps:]).reshape(1, n_steps, 1)
+        y_pred = sess.run(outputs, feed_dict={X: X_batch})
+        sequence.append(y_pred[0, -1, 0])
+
+plt.figure(figsize=(8,4))
+plt.plot(np.arange(len(sequence)), sequence, "b-")
+plt.plot(t[:n_steps], sequence[:n_steps], "b-", linewidth=3)
+plt.xlabel("Time")
+plt.ylabel("Value")
+plt.show()
