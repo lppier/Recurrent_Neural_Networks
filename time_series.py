@@ -121,13 +121,21 @@ reset_graph()
 
 n_steps = 20
 n_inputs = 1
-n_neurons = 100
+n_neurons = 1000
+n_layers = 10
 
 X = tf.placeholder(tf.float32, [None, n_steps, n_inputs])
 y = tf.placeholder(tf.float32, [None, n_steps, n_outputs])
 
-cell = tf.contrib.rnn.BasicRNNCell(num_units=n_neurons, activation=tf.nn.relu)
-rnn_outputs, states = tf.nn.dynamic_rnn(cell, X, dtype=tf.float32)
+# cell = tf.contrib.rnn.BasicRNNCell(num_units=n_neurons, activation=tf.nn.relu)
+# rnn_outputs, states = tf.nn.dynamic_rnn(cell, X, dtype=tf.float32)
+
+# Deep RNN version (3 layers)
+layers = [tf.contrib.rnn.BasicRNNCell(num_units=n_neurons, activation=tf.nn.relu)
+          for layer in range(n_layers)]
+multi_layer_cell = tf.contrib.rnn.MultiRNNCell(layers)
+rnn_outputs, states = tf.nn.dynamic_rnn(multi_layer_cell, X, dtype=tf.float32)
+
 
 n_outputs = 1
 learning_rate = 0.001
