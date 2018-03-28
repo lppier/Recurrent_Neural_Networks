@@ -19,7 +19,6 @@ It is basically a 3-layer neural network, utilizing noise contrastive estimation
 
 Inputs -> Hidden Layer -> Outputs 
 
-<<<<<<< HEAD
 Most complete explanation I've found for this particular code : 
 http://adventuresinmachinelearning.com/word2vec-tutorial-tensorflow/
 
@@ -27,10 +26,11 @@ I also like
 
 https://towardsdatascience.com/learn-word2vec-by-implementing-it-in-tensorflow-45641adaf2ac
 
-=======
-Most complete explanation I've found for this particular code : http://adventuresinmachinelearning.com/word2vec-tutorial-tensorflow/
+Most complete explanation I've found for this particular code : 
+http://adventuresinmachinelearning.com/word2vec-tutorial-tensorflow/
+
 I also like 
 https://towardsdatascience.com/learn-word2vec-by-implementing-it-in-tensorflow-45641adaf2ac
->>>>>>> master
+
 for the hand-drawn diagrams that lent some clarity.
 
