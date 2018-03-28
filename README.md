@@ -25,12 +25,7 @@ http://adventuresinmachinelearning.com/word2vec-tutorial-tensorflow/
 I also like 
 
 https://towardsdatascience.com/learn-word2vec-by-implementing-it-in-tensorflow-45641adaf2ac
-
-Most complete explanation I've found for this particular code : 
-http://adventuresinmachinelearning.com/word2vec-tutorial-tensorflow/
-
-I also like 
-https://towardsdatascience.com/learn-word2vec-by-implementing-it-in-tensorflow-45641adaf2ac
+om/learn-word2vec-by-implementing-it-in-tensorflow-45641adaf2ac
 
 for the hand-drawn diagrams that lent some clarity.
-
+In word2vec, T-SNE was also used to visualize the word embeddings.
