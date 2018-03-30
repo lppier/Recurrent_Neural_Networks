@@ -100,7 +100,7 @@ tensorboard = TensorBoard(log_dir="logs/{}".format(time()))
 model.fit(x=[tokenized_eng_sentences, tokenized_fra_sentences],
           y=target_data,
           batch_size=64,
-          epochs=50,
+          epochs=200,
           validation_split=0.2, verbose=1, callbacks=[tensorboard])
 
 

@@ -78,7 +78,8 @@ Decoded sentence: Ditas se l'arre !
 
 ````
 Hmmm... after checking with Google Translate I found that that wasn't so accurate. Probably because
-it was a character-by-character model.
+it was a character-by-character model, meaning that the french words could be spelt wrongly. 
+Some characters could have been predicted wrongly.
 
 
 
