@@ -81,5 +81,12 @@ Hmmm... after checking with Google Translate I found that that wasn't so accurat
 it was a character-by-character model, meaning that the french words could be spelt wrongly. 
 Some characters could have been predicted wrongly.
 
+**Generate Fake Donald Trump Tweets - fake_donald_trump.py**
+
+A RNN model to generate fake donald trump tweets by basing it on his Twitter history. Data is retrieved from
+http://www.trumptwitterarchive.com
+
+
+
 
 
