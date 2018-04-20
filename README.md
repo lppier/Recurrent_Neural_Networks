@@ -107,3 +107,30 @@ The perve
 
 Classification of fashion minst, the fashion version of the famous minst problem. Here we use Keras, and this
 code demonstrates how easy it is to use Keras to do early stopping and model saving. 
+
+````
+Epoch 00123: acc improved from 0.97193 to 0.97382, saving model to ./output/output_model.hdf5
+Epoch 124/1000
+ - 19s - loss: 0.0732 - acc: 0.9730
+
+Epoch 00124: acc did not improve
+Epoch 125/1000
+ - 19s - loss: 0.0811 - acc: 0.9703
+
+Epoch 00125: acc did not improve
+Epoch 126/1000
+ - 20s - loss: 0.0745 - acc: 0.9735
+
+Epoch 00126: acc did not improve
+Epoch 127/1000
+ - 20s - loss: 0.0772 - acc: 0.9724
+
+Epoch 00127: acc did not improve
+Epoch 128/1000
+ - 19s - loss: 0.0803 - acc: 0.9704
+
+Epoch 00128: acc did not improve
+Epoch 00128: early stopping
+Test score: 0.49652242830842735
+Test accuracy: 0.8836
+````
