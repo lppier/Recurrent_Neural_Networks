@@ -86,11 +86,21 @@ Some characters could have been predicted wrongly.
 A RNN model to generate fake donald trump tweets by basing it on his Twitter history. Data is retrieved from
 http://www.trumptwitterarchive.com
 
-**Fashion Minst - fashion-minst_rnn.py**
+Example output:x**Fashion Minst - fashion-minst_rnn.py**
 
+````
+ is the beginning they were great!,07-17-2013 19:16:22
+@BarackObama is a campaign. He will be a terrible job as a second situation for tax contril.,10-13-2013 21:21:22
+@Brandopero True!,01-10-2013 19:31:17
+@Matterney2011 Thanks Jeff!,03-20-2013 19:21:17
+@Brentardaney The Art of the Deal is great!,02-03-2013 20:33:37
+@sarlynewa @TraceAdkins Thanks.,07-17-2013 15:39:39
+@maraldashard Thanks Jeff!,07-23-2013 19:21:29
+@BarackObama has a complete disaster and that will be the biggest state of the U.S.A.,09-27-2013 11:19:22
+I am self funding a big day for an amazing people. I have a great time in Iowa. He is a good start. I am a total loser!,12-06-2014 21:29:22
+I am in New Hampshire this morning. The fact that the United States is to all with the military. I will be there for a great honor to help it.,07-29-2013 16:17:36
+I am self funning for the @WSJ contestant of the @WhiteHouse the race to see that his speech are so latghing at a lot of millions of dollars.,12-23-2013 19:47:26
+The perve
+````
 Classification of fashion minst, the fashion version of the famous minst problem. Here we use Keras, and this
 code demonstrates how easy it is to use Keras to do early stopping and model saving. 
-
-
-
-
