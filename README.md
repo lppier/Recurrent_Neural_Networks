@@ -86,6 +86,10 @@ Some characters could have been predicted wrongly.
 A RNN model to generate fake donald trump tweets by basing it on his Twitter history. Data is retrieved from
 http://www.trumptwitterarchive.com
 
+**Fashion Minst - fashion-minst_rnn.py**
+
+Classification of fashion minst, the fashion version of the famous minst problem. Here we use Keras, and this
+code demonstrates how easy it is to use Keras to do early stopping and model saving. 
 
 
 
